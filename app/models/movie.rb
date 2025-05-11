@@ -15,4 +15,9 @@
 class Movie < ApplicationRecord
   validates(:director_id, presence: true)
   validates(:title, uniqueness: true)
+
+  def director
+    x = self.director_id
+    return Director.where({ :id -> x}).first
+  end
 end
