@@ -18,5 +18,6 @@ class Movie < ApplicationRecord
 
   belongs_to(:director, foreign_key: "director_id", class_name: "Director")
 
-  has_many(:characters, class_name: "Characters", foreign_key: "movie_id")
+  has_many(:characters, class_name: "Character", foreign_key: "movie_id")
+ # has_many(:cast, { :through => :characters, :source => :actor })
 end
